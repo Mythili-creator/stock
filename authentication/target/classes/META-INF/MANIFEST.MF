@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: authentication
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.cognizant
+Build-Jdk: 1.7.0_111
+Built-By: 802556
+Created-By: Maven Integration for Eclipse
+Implementation-URL: http://projects.spring.io/spring-boot/authenticati
+ on/
+
