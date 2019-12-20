@@ -1,0 +1,47 @@
+.navbar_top {
+    background-color: #ff641a;
+}
+.userName {
+    
+    font-size:20px;
+} 
+#password {
+     font-size:20px;
+}
+
+.box input[type="text"],.box input[type="password"]{
+    border:0;
+    background: none;
+    display: block;
+    margin:10px auto;
+    text-align:center;
+    border:2px solid rgb(3, 38, 93);
+    padding:8px 3px;
+    width:200px;
+    outline: none;
+    color:black;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.box input[type="text"]:focus,.box input[type="password"]:focus
+{
+    width:300px;
+    border-color: rgb(3, 38, 93);
+}
+.btn{
+    border:0;
+    background: none;
+    display: block;
+    margin:10px auto;
+    text-align:center;
+    border:2px solid hsl(290,60%,70%);
+    padding:10px 30px;
+    outline: none;
+    color:black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.btn:hover{
+    background: hsl(290,60%,70%);
+}

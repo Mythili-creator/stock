@@ -1,0 +1,133 @@
+<header class="shadow">
+  <nav class="navbar  navbar-expand-lg navbar-dark" >
+    <div class="container">
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <a class="navbar-brand" href="#">
+
+        <h1 class="w3-container  w3-center w3-allerta">Stock Charts</h1>
+
+      </a>
+
+      <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav mx-auto">
+
+            <div class="nav-item">
+              <a class="nav-link" routerLink="/import-excel">Import Stock Data</a>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Manage Company
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" routerLink="/add-company">Add Company</a>
+                  <a class="dropdown-item" routerLink="/manage-company">View Company</a>
+                </div>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Manage Exchange
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a class="dropdown-item" routerLink="/add-stock">Add Stock Exchanges</a>
+                  <a class="dropdown-item" routerLink="/manage-stock-exchange">View Exchange</a>
+                </div>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="nav-item">
+              <a class="nav-link" routerLink="#">Add IPO Details</a>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+
+          </div>
+          <div class="navbar-nav">
+            <div class="nav-item">
+              <a class="nav-link d-flex" href="">
+                <a id="navbar-menus">{{userName}}</a>
+                <i class="fa fa-user mr-2 mt-1"></i>
+                <span>Logout</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </nav>
+</header>
+<div class="card container mt-5">
+  <h3>Edit Form</h3>
+  <form [formGroup]="editForm" (ngSubmit)="onEdit()">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <label for="stockExchange">Stock Name</label>
+        <div> <input id="stockExchange" class="form-control" type="text" [formControl]="stockExchange" placeholder="stockExchange" /></div>
+        <div *ngIf="stockExchange.invalid && (stockExchange.touched || stockExchange.dirty)">
+          <small *ngIf="stockExchange.errors.required">stock Name field is required.</small>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <label for="brief">Brief</label>
+        <div> <input id="brief" class="form-control" name="brief" type="text" [formControl]="brief" placeholder="Enter brief" /></div>
+        <div *ngIf="brief.invalid && (brief.touched || brief.dirty)">
+          <small *ngIf="brief.errors.required">brief field is required.</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class=" col-lg-6 col-md-6 col-sm-12">
+        <label for="contact">Contact Details</label>
+        <div> <input id="contact" class="form-control" type="text" [formControl]="contact" placeholder="Enter contact details" /></div>
+        <div *ngIf="contact.invalid && (contact.touched || contact.dirty)">
+          <small *ngIf="contact.errors.required">contact field is required.</small>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <label for="remark">Remark</label>
+        <div><input id="remark" class="form-control" type="text" [formControl]="remark" placeholder="Enter remark"  /></div>
+        <div *ngIf="remark.invalid && (remark.touched || remark.dirty)">
+          <small *ngIf="remark.errors.required">remark field is required.</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button type="submit" class="btn  ml-3 mt-2">Save</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-sm navbar-dark text-light navbar_top">
+  <a class="navbar-brand" > <i id="logo"
+      class="material-icons">local_movies</i><span id="heading">
+      Stock Market</span></a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#x">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="x" class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+           <li class="nav-item"><a class="nav-link " id="navbar-menus" routerLink="/login">Login</a></li>
+      <li class="nav-item"><a class="nav-link" id="navbar-menus" routerLink="/signup">Signup</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="box">
+<form #loginForm="ngForm">
+ <div class="container-fluid mb-2">
+         <div class="row justify-content-center mt-4">
+		<div class="col-12 col-md-4 col-lg-3">
+			<div class="card mt-3">
+        <div class="card-body">
+        <span class="row ml-1 mt-4 ">
+  <h3>Login</h3></span>
+   <div class="alert alert-danger mt-4 ml-4 mb-2 mr-4" *ngIf="this.service.Invalid">Invalid Username/Password..</div> 
+ <div class="row mt-2 ">
+ 	<div class="form-group col-12">
+        <label for="userName" class = "userName">UserName</label>
+        <div><input  name="userName" required  class="form-control" type="text" [(ngModel)]="loggedUser.userName" #userName=ngModel
+            placeholder="Enter UserName" />
+          <div><small *ngIf="!userName.value && userName.touched">Name field is required.</small></div>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+						<div class="form-group col-12">
+        <label for="password" id="password">Password</label>
+        <div> <input name="password" type="password" class="form-control" required [(ngModel)]="loggedUser.password" #password=ngModel
+            placeholder="Enter Password" />
+          <div><small *ngIf="!password.value && password.touched">Password field is required.</small></div>
+
+        </div>
+      </div>
+    </div>
+ <div class="row mb-2">
+	<div class="col-4 ">
+      <button type="button" [disabled]="!loginForm.valid" class="btn"
+        (click)="onLogin()">Login</button></div>
+       <div class="col-8">
+       <div class="float-right"><span class="text-muted">New here?</span> <a  routerLink="/signup">Signup</a></div>
+       </div>
+    
+  </div>
+  <div class=" col-2 col-expand-lg mt-5 pb-3 mb-5 " *ngIf="!authenticated">	
+  		<div>
+    <p class="text-danger">Login Unsuccessfull!!!</p>
+   </div></div></div>
+</div>
+		</div>
+	</div>
+ </div>
+</form>
+</div>

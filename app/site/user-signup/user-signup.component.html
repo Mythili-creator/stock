@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-sm navbar-dark text-light navbar_top">
+  <a class="navbar-brand" > <i id="logo"
+      class="material-icons">local_movies</i><span id="heading">
+      Stock Market</span></a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#x">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="x" class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+           <li class="nav-item"><a class="nav-link " id="navbar-menus" routerLink="/login">Login</a></li>
+      <li class="nav-item"><a class="nav-link" id="navbar-menus" routerLink="/signup">Signup</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid mb-2">
+  <div class="row justify-content-center mt-5">
+    <div class="col-12 col-md-4 col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h3>SignUp</h3>
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <label for="userName">UserName</label>
+                <div> <input id="userName" class="form-control" type="text" [formControl]="userName" placeholder="UserName" /></div>
+                <div *ngIf="userName.invalid && (userName.touched || userName.dirty)">
+                  <small *ngIf="userName.errors.required">UserName field is required.</small>
+                  <small *ngIf="userName.errors.minlength">UserName must be 4 characters long, we need another {{userName.errors.minlength.requiredLength - userName.errors.minlength.actualLength}} characters </small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class=" col-lg-6 col-md-6 col-sm-12">
+                <label for="email">Email</label>
+                <div> <input id="email" class="form-control" type="email" [formControl]="email" placeholder="Enter Email" /></div>
+                <div *ngIf="email.invalid && (email.touched || email.dirty)">
+                  <small *ngIf="email.errors.required">Email field is required.</small>
+                  <small *ngIf="email.errors.email">Email is required and format should be Stock@gmail.com</small>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <label for="mobNum">Mobile Number</label>
+                <div><input id="mobNum" class="form-control" type="text" [formControl]="mobNum" placeholder="Enter Mobile Number"
+                    maxlength="13" /></div>
+                <div *ngIf="mobNum.invalid && (mobNum.touched || mobNum.dirty)">
+                  <small *ngIf="mobNum.errors.pattern">Mobile Number should be only Numbers.</small>
+                  <small *ngIf="mobNum.errors.required">Mobile Number field is required.</small>
+                  <div><small *ngIf="mobNum.errors.minlength">Mobile Number must be 10-13 numbers.</small></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <label for="password">Password</label>
+                <div> <input id="password" name="password" class="form-control" type="password" [formControl]="password" placeholder="Enter Password"
+                  /></div>
+                <div *ngIf="password.invalid && (password.touched || password.dirty)">
+                  <small *ngIf="password.errors.required">Password field is required.</small>
+                  <small *ngIf="password.errors.minlength">Password must be 8 characters long, we need another {{password.errors.minlength.requiredLength - password.errors.minlength.actualLength}} characters </small>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                <label for="confirmPassword">Confirm Password</label>
+                <div> <input id="confirmPassword" name="confirmPassword" class="form-control" type="password" [formControl]="confirmPassword"
+                    placeholder="Enter Confirm Password" />
+                </div>
+                <div *ngIf="confirmPassword.invalid && (confirmPassword.touched || confirmPassword.dirty)">
+                  <small *ngIf="confirmPassword.errors.required">Confirm Password field is required.</small>
+                </div><small class="text-danger" *ngIf="isConfirmPasswordValid()">Passwords does not match.</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12">Role
+                <div class="input-group mt-2">
+                  <label for="admin"> <input [formControl]="roleId" 
+                        type="radio"  id="admin" name="role"  [value]='1'>&nbsp;Admin
+                      </label>&nbsp;
+                  <label for="user" class="ml-2"> <input [formControl]="roleId"
+                        type="radio"  id="user" name="role"   [value]='2'>&nbsp;User
+                      </label>
+
+                </div>
+                <div *ngIf="roleId.invalid && (roleId.touched ||roleId.dirty)">
+                  <small *ngIf="roleId.errors.required">Role field is required.</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <button type="submit" class="btn  ml-3 mt-2">Signup</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
