@@ -1,0 +1,5 @@
+INSERT INTO `stock-market-charting`.`role` (`ro_id`, `ro_type`) VALUES ('1', 'ADMIN');
+INSERT INTO `stock-market-charting`.`role` (`ro_id`, `ro_type`) VALUES ('2', 'USER');
+
+INSERT INTO `stock-market-charting`.`user` (`us_id`, `us_name`, `us_password`, `us_email`, `us_mobile_number`, `us_confirmed`, `us_ro_id`) VALUES ('1', 'admin', '$2a$10$R/lZJuT9skteNmAku9Y7aeutxbOKstD5xE5bHOf74M2PHZipyt3yK+
+', 'admin@gmail.com', '9876543210', '1', '1');

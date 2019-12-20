@@ -1,0 +1,36 @@
+INSERT INTO `stock-market-charting`.`role` (`ro_id`, `ro_type`) VALUES ('1', 'ADMIN');
+INSERT INTO `stock-market-charting`.`role` (`ro_id`, `ro_type`) VALUES ('2', 'USER');
+
+INSERT INTO `stock-market-charting`.`user` (`us_id`, `us_name`, `us_password`, `us_email`, `us_mobile_number`, `us_confirmed`, `us_ro_id`) VALUES ('1', 'admin', '$2a$10$R/lZJuT9skteNmAku9Y7aeutxbOKstD5xE5bHOf74M2PHZipyt3yK+
+', 'admin@gmail.com', '9876543210', '1', '1');
+
+INSERT INTO `stock-market-charting`.`stock_exchange` (`se_id`, `se_stock_exchange`, `se_brief`, `se_contact_address`, `se_remark`, `se_active`) VALUES ('1', 'BSE', 'BOMBAY STOCK EXCHANGE', 'BSE,Mumbai,India', 'Best in India', '1');
+INSERT INTO `stock-market-charting`.`stock_exchange` (`se_id`, `se_stock_exchange`, `se_brief`, `se_contact_address`, `se_remark`, `se_active`) VALUES ('2', 'NSE', 'NATIONAL STOCK EXCHANGE', 'NSE,Delhi,India', 'NIFTY', '1');
+
+INSERT INTO `stock-market-charting`.`sectors` (`sc_id`, `sc_name`, `sc_brief`) VALUES ('1', 'Insurance', 'Policies');
+INSERT INTO `stock-market-charting`.`sectors` (`sc_id`, `sc_name`, `sc_brief`) VALUES ('2', 'Oil&Natural Gas', 'Resources');
+INSERT INTO `stock-market-charting`.`sectors` (`sc_id`, `sc_name`, `sc_brief`) VALUES ('3', 'Construction', 'Infrastructure');
+INSERT INTO `stock-market-charting`.`sectors` (`sc_id`, `sc_name`, `sc_brief`) VALUES ('4', 'Banking', 'Domestic & Industrial');
+INSERT INTO `stock-market-charting`.`sectors` (`sc_id`, `sc_name`, `sc_brief`) VALUES ('5', 'Food Processing', 'Food Production');
+
+INSERT INTO `stock-market-charting`.`ipo_details` (`ipo_id`, `ipo_company_name`, `ipo_stock_exchage`, `ipo_price_per_share`, `ipo_total_no_of_share`, `ipo_open_date`, `ipo_remarks`, `ipo_active`) VALUES ('1', 'ITC', 'BSE', '1000', '100', '2018-01-12', 'private', '1');
+INSERT INTO `stock-market-charting`.`ipo_details` (`ipo_id`, `ipo_company_name`, `ipo_stock_exchage`, `ipo_price_per_share`, `ipo_total_no_of_share`, `ipo_open_date`, `ipo_remarks`, `ipo_active`) VALUES ('2', 'ASV', 'NSE', '2000', '50', '2017-11-05', 'private', '1');
+INSERT INTO `stock-market-charting`.`ipo_details` (`ipo_id`, `ipo_company_name`, `ipo_stock_exchage`, `ipo_price_per_share`, `ipo_total_no_of_share`, `ipo_open_date`, `ipo_remarks`, `ipo_active`) VALUES ('3', 'ONGC', 'NSE', '5000', '1000', '2015-06-11', 'govenment', '0');
+INSERT INTO `stock-market-charting`.`ipo_details` (`ipo_id`, `ipo_company_name`, `ipo_stock_exchage`, `ipo_price_per_share`, `ipo_total_no_of_share`, `ipo_open_date`, `ipo_remarks`, `ipo_active`) VALUES ('4', 'AIG', 'BSE', '100', '500', '2019-04-05', 'private', '1');
+INSERT INTO `stock-market-charting`.`ipo_details` (`ipo_id`, `ipo_company_name`, `ipo_stock_exchage`, `ipo_price_per_share`, `ipo_total_no_of_share`, `ipo_open_date`, `ipo_remarks`, `ipo_active`) VALUES ('5', 'HDFC', 'BSE', '1300', '6000', '2014-06-18', 'private', '0');
+INSERT INTO `stock-market-charting`.`ipo_details` (`ipo_id`, `ipo_company_name`, `ipo_stock_exchage`, `ipo_price_per_share`, `ipo_total_no_of_share`, `ipo_open_date`, `ipo_remarks`, `ipo_active`) VALUES ('6', 'YES Bank', 'NSE', '500', '5005', '2017-11-15', 'private', '1');
+
+
+INSERT INTO `stock-market-charting`.`stock_price` (`sp_id`, `sp_company_code`, `sp_stock_exchange`) VALUES ('1', 'ITC', 'BSE');
+INSERT INTO `stock-market-charting`.`stock_price` (`sp_id`, `sp_company_code`, `sp_stock_exchange`) VALUES ('2', 'ASV', 'NSE');
+INSERT INTO `stock-market-charting`.`stock_price` (`sp_id`, `sp_company_code`, `sp_stock_exchange`) VALUES ('3', 'ONGC', 'NSE');
+INSERT INTO `stock-market-charting`.`stock_price` (`sp_id`, `sp_company_code`, `sp_stock_exchange`) VALUES ('4', 'HDFC', 'BSE');
+INSERT INTO `stock-market-charting`.`stock_price` (`sp_id`, `sp_company_code`, `sp_stock_exchange`) VALUES ('5', 'YES', 'BSE');
+INSERT INTO `stock-market-charting`.`stock_price` (`sp_id`, `sp_company_code`, `sp_stock_exchange`) VALUES ('6', 'AIG', 'BSE');
+
+INSERT INTO `stock-market-charting`.`company` (`co_id`, `co_name`, `co_turnover`, `co_sc_id`, `co_ceo`, `co_board_of_directors`, `co_brief_writeup`, `co_active`, `co_ipo_id`, `co_stock_code`) VALUES ('1', 'ITC', '100000', '5', 'Sanjiv Puri', 'Sanjiv Puri', 'Produces Biscuits,Chips', '1', '1', '1');
+INSERT INTO `stock-market-charting`.`company` (`co_id`, `co_name`, `co_turnover`, `co_sc_id`, `co_ceo`, `co_board_of_directors`, `co_brief_writeup`, `co_active`, `co_ipo_id`, `co_stock_code`) VALUES ('2', 'ASV', '50000', '3', 'Vaibhav Kamdar', 'Vaibhav Kamdar', 'Construction', '1', '2', '2');
+INSERT INTO `stock-market-charting`.`company` (`co_id`, `co_name`, `co_turnover`, `co_sc_id`, `co_ceo`, `co_board_of_directors`, `co_brief_writeup`, `co_active`, `co_ipo_id`, `co_stock_code`) VALUES ('3', 'ONGC', '120000', '2', 'Shashi Shanker', 'Shashi Shanker', 'Oil and LPG', '1', '3', '3');
+INSERT INTO `stock-market-charting`.`company` (`co_id`, `co_name`, `co_turnover`, `co_sc_id`, `co_ceo`, `co_board_of_directors`, `co_brief_writeup`, `co_active`, `co_ipo_id`, `co_stock_code`) VALUES ('4', 'AIG', '150000', '1', 'Brian Duperreault', 'Brian Duperreault', 'Insurance', '1', '4', '6');
+INSERT INTO `stock-market-charting`.`company` (`co_id`, `co_name`, `co_turnover`, `co_sc_id`, `co_ceo`, `co_board_of_directors`, `co_brief_writeup`, `co_active`, `co_ipo_id`, `co_stock_code`) VALUES ('5', 'HDFC', '500000', '4', 'Aditya Puri', 'Aditya Puri', 'Banking', '1', '5', '4');
+INSERT INTO `stock-market-charting`.`company` (`co_id`, `co_name`, `co_turnover`, `co_sc_id`, `co_ceo`, `co_board_of_directors`, `co_brief_writeup`, `co_active`, `co_ipo_id`, `co_stock_code`) VALUES ('6', 'Yes', '40000', '4', 'Ravneet Gill', 'Ravneet Gill', 'Banking', '0', '6', '5');
